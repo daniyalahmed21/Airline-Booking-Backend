@@ -1,6 +1,7 @@
 import Express from "express";
 import { SERVER_CONFIG } from "./configs/serverConfig.js";
 import apiRouter from "./routes/index.js";
+import logger from "./configs/loggerConfig.js";
 
 const app = Express();
 
@@ -8,6 +9,7 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
+  logger.info("Home route accessed");
   res.send("Hello World!");
 });
 
