@@ -1,7 +1,7 @@
 import Express from "express";
-import { SERVER_CONFIG } from "./configs/serverConfig.js";
+import { SERVER_CONFIG } from "./config/serverConfig.js";
 import apiRouter from "./routes/index.js";
-import logger from "./configs/loggerConfig.js";
+import logger from "./config/loggerConfig.js";
 
 const app = Express();
 
