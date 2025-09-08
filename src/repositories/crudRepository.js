@@ -1,6 +1,6 @@
 const { logger } = require("../config/loggerConfig.js");
 
-class CrudRepository {
+export default class CrudRepository {
   constructor(model) {
     this.model = model;
   }
