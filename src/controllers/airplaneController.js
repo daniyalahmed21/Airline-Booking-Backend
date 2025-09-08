@@ -1,10 +1,11 @@
-import AirplaneService from "../services/airplaneService";
+import { StatusCodes } from "http-status-codes";
+import AirplaneService from "../services/airplaneService.js";
 
-const { StatusCodes } = require("http-status-codes");
+const AirplaneServiceInstance = new AirplaneService();
 
 export async function createAirplane(req, res) {
   try {
-    const airplane = await AirplaneService.createAirplane({
+    const airplane = await AirplaneServiceInstance.createAirplane({
       modelNumber: req.body.modelNumber,
       capacity: req.body.capacity,
     });

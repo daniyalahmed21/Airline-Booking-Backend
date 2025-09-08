@@ -1,1 +1,5 @@
 2025-09-07 11:13:45 [MyApp] info: Home route accessed
+2025-09-08 20:58:34 [MyApp] error: Something went wrong in the Crud Repository : create
+2025-09-08 21:00:56 [MyApp] error: Something went wrong in the Crud Repository : create
+2025-09-08 21:03:13 [MyApp] error: Something went wrong in the Crud Repository : create
+2025-09-08 21:03:46 [MyApp] error: Something went wrong in the Crud Repository : create
