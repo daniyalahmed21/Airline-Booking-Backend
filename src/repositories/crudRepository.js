@@ -15,12 +15,36 @@ class CrudRepository {
     }
   }
 
+  async getAll() {
+    try {
+      const result = await this.model.findAll();
+      return result;
+    } catch (error) {
+      logger.error("Something went wrong in the Crud Repository : getAll");
+      throw error;
+    }
+  }
+
   async create(data) {
     try {
       const result = await this.model.create(data);
       return result;
     } catch (error) {
       logger.error("Something went wrong in the Crud Repository : create");
+      throw error;
+    }
+  }
+
+  async update(modelId, data) {
+    try {
+      const result = await this.model.update(data, {
+        where: {
+          id: modelId,
+        },
+      });
+      return result;
+    } catch (error) {
+      logger.error("Something went wrong in the Crud Repository : update");
       throw error;
     }
   }
