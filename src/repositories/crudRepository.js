@@ -25,7 +25,6 @@ export default class CrudRepository {
   }
 
   async create(data) {
-    console.log("Inside crud repository");
     try {
       const result = await this.model.create(data);
       return result;

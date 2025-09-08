@@ -1,4 +1,5 @@
 import AirplaneRepository from "../repositories/airplaneRepository.js";
+import logger  from "../config/loggerConfig.js";
 
 const airplaneRepository = new AirplaneRepository();
 export default class AirplaneService {
@@ -6,12 +7,11 @@ export default class AirplaneService {
     this.airplaneRepository = airplaneRepository;
   }
   async createAirplane(data) {
-    console.log("Inside service layer");
     try {
       const airplane = await airplaneRepository.create(data);
       return airplane;
     } catch (error) {
-      console.log("Something went wrong in the service layer");
+      logger.error("Something went wrong in the service layer");
       throw error;
     }
   }
@@ -21,7 +21,7 @@ export default class AirplaneService {
       const airplanes = await airplaneRepository.getAll();
       return airplanes;
     } catch (error) {
-      console.log("Something went wrong in the service layer");
+      logger.error("Something went wrong in the service layer");
       throw error;
     }
   }
@@ -31,7 +31,7 @@ export default class AirplaneService {
       const airplane = await airplaneRepository.get(id);
       return airplane;
     } catch (error) {
-      console.log("Something went wrong in the service layer");
+      logger.error("Something went wrong in the service layer");
       throw error;
     }
   }
@@ -41,7 +41,7 @@ export default class AirplaneService {
       const airplane = await airplaneRepository.update(id, data);
       return airplane;
     } catch (error) {
-      console.log("Something went wrong in the service layer");
+      logger.error("Something went wrong in the service layer");
       throw error;
     }
   }
@@ -51,7 +51,7 @@ export default class AirplaneService {
       const response = await airplaneRepository.delete(id);
       return response;
     } catch (error) {
-      console.log("Something went wrong in the service layer");
+      logger.error("Something went wrong in the service layer");
       throw error;
     }
   }
