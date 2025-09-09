@@ -11,7 +11,10 @@ const sequelize = new Sequelize(
   }
 );
 
-export class Airplane extends Model {}
+export class Airplane extends Model {
+  // You can add custom methods or getters/setters here if needed
+  
+}
 
 Airplane.init(
   {
