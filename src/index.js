@@ -2,6 +2,7 @@ import Express from "express";
 import { SERVER_CONFIG } from "./config/serverConfig.js";
 import apiRouter from "./routes/index.js";
 import logger from "./config/loggerConfig.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 const app = Express();
 
@@ -14,6 +15,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", apiRouter)
+
+app.use(errorHandler)
 
 app.listen(SERVER_CONFIG.PORT, () => {
   console.log(`Server is running on port ${SERVER_CONFIG.PORT}`);

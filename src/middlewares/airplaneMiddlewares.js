@@ -5,7 +5,7 @@ export const validateAirplaneData = (req, res, next) => {
 
   if (!modelNumber || typeof modelNumber !== "string") {
     return res.status(StatusCodes.BAD_REQUEST).json({
-      status: "false",
+      status: false,
       data: {},
       message: "Invalid or missing airplane model",
       error: { explanation: "Model number is required and should be a string" },
