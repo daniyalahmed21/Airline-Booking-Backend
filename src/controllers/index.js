@@ -1,6 +1,5 @@
-import { createAirplane, getAirplanes } from "./airplaneController.js";
+import * as AirplaneController from "./airplaneController.js";
 
-export default {
-  createAirplane,
-  getAirplanes
+export  {
+  AirplaneController
 };

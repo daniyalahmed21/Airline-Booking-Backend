@@ -3,3 +3,15 @@
 2025-09-08 21:00:56 [MyApp] error: Something went wrong in the Crud Repository : create
 2025-09-08 21:03:13 [MyApp] error: Something went wrong in the Crud Repository : create
 2025-09-08 21:03:46 [MyApp] error: Something went wrong in the Crud Repository : create
+2025-09-10 19:45:04 [MyApp] error: ReferenceError: AppError is not defined
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:19:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:32:20
+2025-09-10 19:45:21 [MyApp] error: Error: Airplane with id 1000 not found
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:20:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:32:20
+2025-09-10 19:48:21 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:21:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:32:20
