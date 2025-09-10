@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes";
-import AirplaneService from "../services/airplaneService.js";
+import Services from "../services/index.js";
 import { asyncHandler } from "../utils/errors/asyncHandler.js";
 
-const airplaneService = new AirplaneService();
+const airplaneService = new Services.AirplaneService();
 
 export const createAirplane = asyncHandler(async (req, res) => {
   const airplane = await airplaneService.createAirplane({
@@ -14,6 +14,16 @@ export const createAirplane = asyncHandler(async (req, res) => {
     status: true,
     data: airplane,
     message: "Successfully created an airplane",
+    error: { explanation: [] },
+  });
+});
+
+export const getAirplanes = asyncHandler(async (req, res) => {
+  const airplanes = await airplaneService.getAirplanes();
+  res.status(StatusCodes.OK).json({
+    status: true,
+    data: airplanes,
+    message: "Successfully fetched all airplanes",
     error: { explanation: [] },
   });
 });

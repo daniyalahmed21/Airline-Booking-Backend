@@ -1,6 +1,6 @@
-import AirplaneRepository from "./airplaneRepository.js"
-
+import AirplaneRepository from "./airplaneRepository.js";
+import CrudRepository from "./crudRepository.js";
 export default {
-    AirplaneRepository,
-    
-}
+  AirplaneRepository,
+  CrudRepository,
+};

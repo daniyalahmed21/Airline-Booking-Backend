@@ -1,15 +1,18 @@
 import AppError from "../utils/errors/appError.js";
+import logger from "../config/loggerConfig.js";
 
-export function errorHandler(err, req, res, next) {
+export default function errorHandler(err, req, res, next) {
+  logger.error(err.stack);
+
   // Handle Sequelize Validation Error
   if (err.name === "SequelizeValidationError") {
-    const explanation = err.errors.map(e => e.message);
+    const explanation = err.errors.map((e) => e.message);
     err = new AppError("Validation failed", 400, explanation);
   }
 
   // Handle Sequelize Unique Constraint Error
   if (err.name === "SequelizeUniqueConstraintError") {
-    const explanation = err.errors.map(e => e.message);
+    const explanation = err.errors.map((e) => e.message);
     err = new AppError("Duplicate entry", 409, explanation);
   }
 
@@ -22,7 +25,7 @@ export function errorHandler(err, req, res, next) {
     data: {},
     message: err.message,
     error: {
-      explanation: err.explanation || [err.message]
-    }
+      explanation: err.explanation || [err.message],
+    },
   });
 }

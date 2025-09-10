@@ -1,9 +1,11 @@
 import Express from "express";
-import { createAirplane } from "../../controllers/airplaneController.js";
-import { validateAirplaneData } from "../../middlewares/airplaneMiddlewares.js";
+import Controllers from "../../controllers/index.js";
+import Middlewares from "../../middlewares/index.js";
 
 const airplaneRouter = Express.Router();
 
-airplaneRouter.post("/", validateAirplaneData, createAirplane);
+airplaneRouter.post("/", Middlewares.validateAirplaneData, Controllers.createAirplane);
+airplaneRouter.get("/", Controllers.getAirplanes);
+
 
 export default airplaneRouter;

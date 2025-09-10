@@ -1,58 +1,27 @@
-import AirplaneRepository from "../repositories/airplaneRepository.js";
-import logger  from "../config/loggerConfig.js";
+import Repositories from "../repositories/index.js";
 
-const airplaneRepository = new AirplaneRepository();
 export default class AirplaneService {
   constructor() {
-    this.airplaneRepository = airplaneRepository;
+    this.airplaneRepository = new Repositories.AirplaneRepository();
   }
+
   async createAirplane(data) {
-    try {
-      const airplane = await airplaneRepository.create(data);
-      return airplane;
-    } catch (error) {
-      logger.error("Something went wrong in the service layer");
-      throw error;
-    }
+    return await this.airplaneRepository.create(data);
   }
 
   async getAirplanes() {
-    try {
-      const airplanes = await airplaneRepository.getAll();
-      return airplanes;
-    } catch (error) {
-      logger.error("Something went wrong in the service layer");
-      throw error;
-    }
+    return await this.airplaneRepository.getAll();
   }
 
   async getAirplane(id) {
-    try {
-      const airplane = await airplaneRepository.get(id);
-      return airplane;
-    } catch (error) {
-      logger.error("Something went wrong in the service layer");
-      throw error;
-    }
+    return await this.airplaneRepository.get(id);
   }
 
   async updateAirplane(id, data) {
-    try {
-      const airplane = await airplaneRepository.update(id, data);
-      return airplane;
-    } catch (error) {
-      logger.error("Something went wrong in the service layer");
-      throw error;
-    }
+    return await this.airplaneRepository.update(id, data);
   }
 
   async deleteAirplane(id) {
-    try {
-      const response = await airplaneRepository.delete(id);
-      return response;
-    } catch (error) {
-      logger.error("Something went wrong in the service layer");
-      throw error;
-    }
+    return await this.airplaneRepository.destroy(id);
   }
 }
