@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import Services from "../services/index.js";
 import { asyncHandler } from "../utils/errors/asyncHandler.js";
-import e from "express";
+import { sendSuccess } from "../utils/responseHandler.js";
 
 const airplaneService = new Services.AirplaneService();
 
@@ -10,33 +10,17 @@ export const createAirplane = asyncHandler(async (req, res) => {
     modelNumber: req.body.modelNumber,
     capacity: req.body.capacity,
   });
-
-  res.status(StatusCodes.CREATED).json({
-    status: true,
-    data: airplane,
-    message: "Successfully created an airplane",
-    error: { explanation: [] },
-  });
+  sendSuccess(res, airplane, "Successfully created an airplane", StatusCodes.CREATED);
 });
 
 export const getAirplanes = asyncHandler(async (req, res) => {
   const airplanes = await airplaneService.getAirplanes();
-  res.status(StatusCodes.OK).json({
-    status: true,
-    data: airplanes,
-    message: "Successfully fetched all airplanes",
-    error: { explanation: [] },
-  });
+  sendSuccess(res, airplanes, "Successfully fetched all airplanes");
 });
 
 export const getAirplane = asyncHandler(async (req, res) => {
   const airplane = await airplaneService.getAirplane(req.params.id);
-  res.status(StatusCodes.OK).json({
-    status: true,
-    data: airplane,
-    message: "Successfully fetched the airplane",
-    error: { explanation: [] },
-  });
+  sendSuccess(res, airplane, "Successfully fetched the airplane");
 });
 
 export const updateAirplane = asyncHandler(async (req, res) => {
@@ -44,20 +28,10 @@ export const updateAirplane = asyncHandler(async (req, res) => {
     modelNumber: req.body.modelNumber,
     capacity: req.body.capacity,
   });
-  res.status(StatusCodes.OK).json({
-    status: true,
-    data: airplane,
-    message: "Successfully updated the airplane",
-    error: { explanation: [] },
-  });
+  sendSuccess(res, airplane, "Successfully updated the airplane");
 });
 
 export const deleteAirplane = asyncHandler(async (req, res) => {
   await airplaneService.deleteAirplane(req.params.id);
-  res.status(StatusCodes.OK).json({
-    status: true,
-    data: null,
-    message: "Successfully deleted the airplane",
-    error: { explanation: [] },
-  });
+  sendSuccess(res, null, "Successfully deleted the airplane");
 });
