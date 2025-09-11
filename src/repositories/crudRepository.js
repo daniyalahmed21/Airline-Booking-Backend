@@ -22,9 +22,8 @@ export default class CrudRepository {
   }
 
   async destroy(modelId) {
-    await this.model.destroy({
+    return await this.model.destroy({
       where: { id: modelId }
     });
-    return true;
   }
 }

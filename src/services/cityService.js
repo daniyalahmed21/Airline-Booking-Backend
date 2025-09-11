@@ -1,10 +1,10 @@
-import CityRepository from "../repositories/cityRepository.js";
 import AppError from "../utils/errors/appError.js";
 import { StatusCodes } from "http-status-codes";
+import Repositories from "../repositories/index.js";
 
 export default class CityService {
   constructor() {
-    this.cityRepository = new CityRepository();
+    this.cityRepository = new Repositories.CityRepository();
   }
 
   async createCity(data) {

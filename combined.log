@@ -15,3 +15,23 @@
     at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:21:13)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
     at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:32:20
+2025-09-11 21:10:33 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:21:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:22:20
+2025-09-11 21:18:16 [MyApp] error: Error: Not able to delete the resource
+    at AirplaneService.deleteAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:46:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:35:3
+2025-09-11 21:18:37 [MyApp] error: Error: Not able to update the resource
+    at AirplaneService.updateAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:33:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:27:20
+2025-09-11 21:18:45 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:21:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:22:20
+2025-09-11 21:21:12 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplanes (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:18:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:17:21

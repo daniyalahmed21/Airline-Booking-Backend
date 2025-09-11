@@ -12,7 +12,15 @@ export default class AirplaneService {
   }
 
   async getAirplanes() {
-    return await this.airplaneRepository.getAll();
+    const airplanes = await this.airplaneRepository.getAll();
+    if (airplanes.length === 0) {
+      throw new AppError(
+        "Not able to find the resource ",
+        StatusCodes.NOT_FOUND,
+        ["No airplanes found"]
+      );
+    }
+    return airplanes;
   }
 
   async getAirplane(id) {
