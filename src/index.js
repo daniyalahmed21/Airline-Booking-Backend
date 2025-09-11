@@ -23,6 +23,13 @@ app.listen(SERVER_CONFIG.PORT, async () => {
   console.log("✅ Database synced");
 
   // example insert
-  // const city = await City.create({ name: "Lisbon" });
+  const city = await City.findByPk(1);
+  const airport = await city.createAirport({
+    name: "Test Airport",
+    code: "TST",
+    cityId: city.id
+  });
+
+  console.log("Inserted airport:", airport.toJSON());
 
 });
