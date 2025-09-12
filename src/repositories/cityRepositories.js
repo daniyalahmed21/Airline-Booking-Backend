@@ -1,27 +1,8 @@
 import City from "../models/city.js";
+import CrudRepository from "./crudRepository.js";
 
-export default class CityRepository {
+export default class CityRepository extends CrudRepository {
   constructor() {
-    this.model = City;
-  }
-
-  async get(id) {
-    return await this.model.findByPk(id);
-  }
-
-  async getAll() {
-    return await this.model.findAll();
-  }
-
-  async create(data) {
-    return await this.model.create(data);
-  }
-
-  async update(id, data) {
-    return await this.model.update(data, { where: { id } });
-  }
-
-  async destroy(id) {
-    return await this.model.destroy({ where: { id } });
+    super(City);
   }
 }
