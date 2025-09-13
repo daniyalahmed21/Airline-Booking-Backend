@@ -1,7 +1,9 @@
-import { DataTypes, Model } from 'sequelize';
-import { sequelize } from '../config/sequelize.js'; // <- adjust path to your sequelize instance
+import { DataTypes, Model } from "sequelize";
+import { sequelize } from "../config/sequelize.js";
+import Airplane from "./airplane.js";
+import Airport from "./airport.js";
 
-class Flight extends Model {}
+export class Flight extends Model {}
 
 Flight.init(
   {
@@ -12,14 +14,32 @@ Flight.init(
     airplaneId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Airplanes",
+        key: "id",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     departureAirportId: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: "Airports",
+        key: "code",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     arrivalAirportId: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: "Airports",
+        key: "code",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     arrivalDate: {
       type: DataTypes.DATE,
@@ -34,7 +54,7 @@ Flight.init(
       allowNull: false,
     },
     boardingDate: {
-      type: DataTypes.STRING, // optional field
+      type: DataTypes.STRING,
       allowNull: true,
     },
     totalSeats: {
@@ -44,8 +64,8 @@ Flight.init(
   },
   {
     sequelize,
-    modelName: 'Flight',
-    tableName: 'Flights', // must match your migration table
+    modelName: "Flight",
+    tableName: "Flights",
   }
 );
 

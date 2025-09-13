@@ -15,6 +15,18 @@ export default class FlightService {
     return await this.flightRepository.getAll();
   }
 
+  async getFilteredFlights(filterData) {
+    
+    let customFilter = {};
+    if (filterData.arrivalAirportId) {
+      customFilter.arrivalAirportId = filterData.arrivalAirportId;
+    }
+    if (filterData.departureAirportId) {
+      customFilter.departureAirportId = filterData.departureAirportId;
+    }
+    return await this.flightRepository.getAllFlights(customFilter);
+  }
+
   async getFlight(id) {
     const flight = await this.flightRepository.get(id);
     if (!flight) {

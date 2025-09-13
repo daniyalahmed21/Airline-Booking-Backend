@@ -128,3 +128,45 @@ notNull Violation: Airplane.capacity cannot be null
     at async AirportRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
     at async AirportService.createAirport (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airportService.js:11:16)
     at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airportController.js:9:19
+2025-09-13 19:21:00 [MyApp] error: TypeError: Cannot read properties of undefined (reading 'flightNumber')
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:9:28
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/utils/errors/asyncHandler.js:3:23
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:582:12)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:291:5)
+2025-09-13 19:26:56 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.insert (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2490:35)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:11:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-13 19:27:10 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.insert (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async Airport.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2490:35)
+    at async Airport.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async AirportRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async AirportService.createAirport (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airportService.js:11:16)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airportController.js:9:19
+2025-09-13 20:32:52 [MyApp] error: TypeError: req.query.split is not a function or its return value is not iterable
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:30:60
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/utils/errors/asyncHandler.js:3:23
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:582:12)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:291:5)

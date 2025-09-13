@@ -6,4 +6,12 @@ export default class FlightRepository extends CrudRepository {
   constructor() {
     super(Flight);
   }
+
+  async getAllFlights(filterData) {
+    const response = await Flight.findAll({
+      where: filterData,
+      order: [['departureTime', 'ASC']]
+    });
+    return response;
+  }
 }

@@ -24,3 +24,12 @@ export const createFlight = asyncHandler(async (req, res) => {
     StatusCodes.CREATED
   );
 });
+
+
+export const getFilteredFlights = asyncHandler(async (req, res) => {
+  const [departureAirportId,arrivalAirportId ] = req.query.trips.split("-")
+    
+
+  const flights = await flightService.getFilteredFlights({arrivalAirportId, departureAirportId});
+  sendSuccess(res, flights, "Successfully fetched filtered flights");
+});
