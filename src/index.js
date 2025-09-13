@@ -16,7 +16,7 @@ app.use(Middlewares.errorHandler);
 
 app.listen(SERVER_CONFIG.PORT, async () => {
   console.log(`Server running on port ${SERVER_CONFIG.PORT}`);
-  await sequelize.sync({ alter: true }); // or { force: false }
+  // await sequelize.sync({ alter: true }); // or { force: false }
   console.log("✅ Database synced");
 
 });

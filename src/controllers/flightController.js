@@ -27,9 +27,17 @@ export const createFlight = asyncHandler(async (req, res) => {
 
 
 export const getFilteredFlights = asyncHandler(async (req, res) => {
-  const [departureAirportId,arrivalAirportId ] = req.query.trips.split("-")
-    
+  const { trips, minPrice, maxPrice, travellers, travelDate, sortBy, order } = req.query;
 
-  const flights = await flightService.getFilteredFlights({arrivalAirportId, departureAirportId});
+  const flights = await flightService.getFilteredFlights({
+    trips,
+    minPrice,
+    maxPrice,
+    travellers,
+    travelDate,
+    sortBy,
+    order
+  });
+
   sendSuccess(res, flights, "Successfully fetched filtered flights");
 });

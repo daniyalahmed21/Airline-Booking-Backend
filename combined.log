@@ -170,3 +170,74 @@ notNull Violation: Airplane.capacity cannot be null
     at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
     at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:582:12)
     at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:291:5)
+2025-09-13 21:02:52 [MyApp] error: ReferenceError: Op is not defined
+    at FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:31:51)
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:38:39
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/utils/errors/asyncHandler.js:3:23
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:582:12)
+2025-09-13 21:39:27 [MyApp] error: TypeError: trips.split is not a function or its return value is not iterable
+    at FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:24:60)
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:39
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/utils/errors/asyncHandler.js:3:23
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:582:12)
+2025-09-13 21:40:00 [MyApp] error: ReferenceError: Airport is not defined
+    at FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:15:18)
+    at FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:37:40)
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:39
+    at file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/utils/errors/asyncHandler.js:3:23
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+2025-09-13 22:13:11 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.select (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async Flight.findAll (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1140:21)
+    at async FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:16:12)
+    at async FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:45:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:19
+2025-09-13 22:14:03 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.select (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async Flight.findAll (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1140:21)
+    at async FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:16:12)
+    at async FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:45:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:19
+2025-09-13 22:14:16 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.select (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async Flight.findAll (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1140:21)
+    at async FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:16:12)
+    at async FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:45:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:19
+2025-09-13 22:24:22 [MyApp] error: SequelizeEagerLoadingError: Airport is associated to Flight multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+    at Flight._getIncludedAssociation (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:580:13)
+    at Flight._validateIncludedElement (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:502:53)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:421:37
+    at Array.map (<anonymous>)
+    at Flight._validateIncludedElements (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:417:39)
+    at Flight.findAll (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1124:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:16:12)
+    at async FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:45:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:19

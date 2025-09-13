@@ -1,6 +1,7 @@
 import AppError from "../utils/errors/appError.js";
 import { StatusCodes } from "http-status-codes";
 import Repositories from "../repositories/index.js";
+import { Op } from "sequelize";
 
 export default class FlightService {
   constructor() {
@@ -16,15 +17,34 @@ export default class FlightService {
   }
 
   async getFilteredFlights(filterData) {
-    
     let customFilter = {};
-    if (filterData.arrivalAirportId) {
-      customFilter.arrivalAirportId = filterData.arrivalAirportId;
+    const { trips, minPrice, maxPrice, travellers, travelDate, sortBy, order } =
+      filterData;
+
+    if (trips) {
+      const [departureAirportId, arrivalAirportId] = trips.split("-");
+      customFilter.departureAirportId = departureAirportId;
+      customFilter.arrivalAirportId = arrivalAirportId;
     }
-    if (filterData.departureAirportId) {
-      customFilter.departureAirportId = filterData.departureAirportId;
-    }
-    return await this.flightRepository.getAllFlights(customFilter);
+
+    if (minPrice) customFilter.price = { [Op.gte]: minPrice };
+    if (maxPrice)
+      customFilter.price = { ...customFilter.price, [Op.lte]: maxPrice };
+    const travelDateStart = new Date(`${filterData.travelDate}T00:00:00`);
+    const travelDateEnd = new Date(`${filterData.travelDate}T23:59:59`);
+
+    customFilter.departureTime = {
+      [Op.gte]: travelDateStart,
+      [Op.lte]: travelDateEnd,
+    };
+    if (travellers) customFilter.totalSeats = { [Op.gte]: travellers };
+
+    const sortField = sortBy || "departureTime"; // default sort field
+    const sortOrder = order || "ASC"; // default order
+
+    return await this.flightRepository.getAllFlights(customFilter, [
+      [sortField, sortOrder],
+    ]);
   }
 
   async getFlight(id) {
