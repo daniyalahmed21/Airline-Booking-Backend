@@ -1,7 +1,5 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../config/sequelize.js";
-import Airplane from "./airplane.js";
-import Airport from "./airport.js";
 
 export class Flight extends Model {}
 
