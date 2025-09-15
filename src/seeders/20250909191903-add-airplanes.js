@@ -4,7 +4,7 @@ export default {
     /**
      * Adding seed data for Airplane table.
      */
-    await queryInterface.bulkInsert('Airplane', [
+    await queryInterface.bulkInsert('Airplanes', [
       { modelNumber: 'Boeing 737', capacity: 200, createdAt: new Date(), updatedAt: new Date() },
       { modelNumber: 'Airbus A320', capacity: 180, createdAt: new Date(), updatedAt: new Date() },
       { modelNumber: 'Boeing 747', capacity: 400, createdAt: new Date(), updatedAt: new Date() },
@@ -15,6 +15,6 @@ export default {
     /**
      * Removing seed data from Airplane table.
      */
-    await queryInterface.bulkDelete('Airplane', null, {});
+    await queryInterface.bulkDelete('Airplanes', null, {});
   },
 };
