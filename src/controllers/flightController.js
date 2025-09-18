@@ -52,3 +52,11 @@ export async function updateSeats(req, res) {
 
   sendSuccess(res, updatedFlight, "Successfully updated flight seats");
 }
+
+export const getFlight = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  const flight = await flightService.getFlight(id);
+
+  sendSuccess(res, flight, "Successfully fetched a flight");
+});

@@ -50,7 +50,7 @@ export default class FlightRepository extends CrudRepository {
       throw new Error("Flight not found");
     }
 
-    if (parseInt(dec)) {
+    if (+dec) {
       await flight.decrement("totalSeats", { by: seats });
     } else {
       await flight.increment("totalSeats", { by: seats });
