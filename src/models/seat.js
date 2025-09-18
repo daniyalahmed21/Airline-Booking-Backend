@@ -1,8 +1,8 @@
 import { DataTypes, Model } from "sequelize";
-import { SEAT_TYPE } from "../utils/enums.js";  // adjust path to your enums file
 import { sequelize } from "../config/sequelize.js";
+import { SEAT_TYPE } from "../utils/enums.js";
 
-class Seat extends Model {}
+export class Seat extends Model {}
 
 Seat.init(
   {
@@ -20,15 +20,15 @@ Seat.init(
     },
     type: {
       type: DataTypes.ENUM(...Object.values(SEAT_TYPE)),
-      allowNull: false,
       defaultValue: SEAT_TYPE.ECONOMY,
+      allowNull: false,
     },
   },
   {
     sequelize,
     modelName: "Seat",
-    tableName: "Seats", // important for Sequelize CLI migrations
-    timestamps: true,   // automatically adds createdAt and updatedAt
+    tableName: "Seats",
+    timestamps: true,
   }
 );
 

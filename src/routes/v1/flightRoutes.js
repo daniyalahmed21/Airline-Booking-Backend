@@ -9,4 +9,6 @@ flightRouter.get("/", FlightController.getFilteredFlights);
 // flightRouter.delete("/:id", FlightController.deleteFlight);
 // flightRouter.put("/:id", FlightController.updateFlight);
 
+flightRouter.patch("/seats/:flightId", FlightController.updateSeats);
+
 export default flightRouter;

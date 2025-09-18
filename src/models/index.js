@@ -1,13 +1,17 @@
-'use strict';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath, pathToFileURL } from "url";
+import { Sequelize } from "sequelize";
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const process = require('process');
-const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const env = process.env.NODE_ENV || "development";
+
+// Load config.json manually
+const configPath = path.join(__dirname, "../config/config.json");
+const configJson = JSON.parse(fs.readFileSync(configPath, "utf-8"));
+const config = configJson[env];
 
 let sequelize;
 if (config.use_env_variable) {
@@ -16,28 +20,44 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-fs
-  .readdirSync(__dirname)
-  .filter(file => {
-    return (
-      file.indexOf('.') !== 0 &&
-      file !== basename &&
-      file.slice(-3) === '.js' &&
-      file.indexOf('.test.js') === -1
-    );
-  })
-  .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
-  });
+const db = { sequelize, Sequelize };
 
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
+// Dynamically import models
+const modelFiles = fs
+  .readdirSync(__dirname)
+  .filter(file =>
+    file.endsWith(".js") && file !== path.basename(__filename)
+  );
+
+for (const file of modelFiles) {
+  const fileUrl = pathToFileURL(path.join(__dirname, file)).href;
+  const modelModule = await import(fileUrl);
+
+  // Some files may not have default export, skip them
+  if (!modelModule.default) continue;
+
+  const ModelClass = modelModule.default;
+
+  // Only include Sequelize Models
+  if (typeof ModelClass === "function" && "init" in ModelClass) {
+    db[ModelClass.name] = ModelClass;
+    // Initialize model with sequelize if not done inside the file
+    if (!ModelClass.sequelize) {
+      ModelClass.init(ModelClass.rawAttributes, {
+        sequelize,
+        modelName: ModelClass.name,
+        tableName: ModelClass.tableName || undefined,
+        timestamps: true,
+      });
+    }
+  }
+}
+
+// Setup associations
+Object.values(db).forEach(model => {
+  if (typeof model.associate === "function") {
+    model.associate(db);
   }
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-module.exports = db;
+export default db;

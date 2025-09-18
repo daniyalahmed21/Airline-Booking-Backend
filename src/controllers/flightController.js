@@ -10,7 +10,7 @@ export const createFlight = asyncHandler(async (req, res) => {
     airplaneId: req.body.airplaneId,
     departureAirportId: req.body.departureAirportId,
     arrivalAirportId: req.body.arrivalAirportId,
-    arrivalDate: new Date(req.body.arrivalDate),
+    arrivalTime: new Date(req.body.arrivalTime),
     departureTime: new Date(req.body.departureTime),
     price: req.body.price,
     boardingDate: req.body.boardingDate,
@@ -41,3 +41,14 @@ export const getFilteredFlights = asyncHandler(async (req, res) => {
 
   sendSuccess(res, flights, "Successfully fetched filtered flights");
 });
+
+
+export async function updateSeats(req, res) {
+  const { flightId } = req.params;
+  const { seats, dec } = req.body;
+
+
+  const updatedFlight = await flightService.updateSeats(flightId, seats, dec);
+
+  sendSuccess(res, updatedFlight, "Successfully updated flight seats");
+}

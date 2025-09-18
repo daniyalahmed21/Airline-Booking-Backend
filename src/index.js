@@ -3,7 +3,7 @@ import { SERVER_CONFIG } from "./config/serverConfig.js";
 import apiRouter from "./routes/index.js";
 import Middlewares from "./middlewares/index.js";
 import { sequelize } from "./config/sequelize.js";
-import "./models/associations.js";
+// import "./models/associations.js";
 
 const app = Express();
 
@@ -16,7 +16,7 @@ app.use(Middlewares.errorHandler);
 
 app.listen(SERVER_CONFIG.PORT, async () => {
   console.log(`Server running on port ${SERVER_CONFIG.PORT}`);
-  // await sequelize.sync({ alter: true }); // or { force: false }
+  // await sequelize.sync({ force: true }); 
   console.log("✅ Database synced");
 
 });

@@ -12,6 +12,9 @@ export default class FlightService {
     return await this.flightRepository.create(data);
   }
 
+  async updateSeats(flightId, seats, dec = true) {
+    return await this.flightRepository.updateSeats(flightId, seats, dec);
+  }
   async getFlights() {
     return await this.flightRepository.getAll();
   }

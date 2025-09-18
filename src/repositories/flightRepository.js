@@ -3,8 +3,8 @@ import Airplane from "../models/airplane.js";
 import Airport from "../models/airport.js";
 import Flight from "../models/flight.js";
 import CrudRepository from "./crudRepository.js";
-
-
+import { addRowLockOnFlights } from "./queries.js";
+import db from "../models/index.js";
 export default class FlightRepository extends CrudRepository {
   constructor() {
     super(Flight);
@@ -21,10 +21,10 @@ export default class FlightRepository extends CrudRepository {
           model: Airport,
           as: "departureAirport",
           on: Sequelize.where(
-            Sequelize.col("departureAirport.code"), 
+            Sequelize.col("departureAirport.code"),
             "=",
-            Sequelize.col("Flight.departureAirportId") 
-          )
+            Sequelize.col("Flight.departureAirportId")
+          ),
         },
         {
           model: Airport,
@@ -33,17 +33,30 @@ export default class FlightRepository extends CrudRepository {
             Sequelize.col("arrivalAirport.code"),
             "=",
             Sequelize.col("Flight.arrivalAirportId")
-          )
+          ),
         },
         {
           model: Airplane,
-          as: "airplane"
-        }
+          as: "airplane",
+        },
       ],
-      
-      
     });
-
   }
-  
+
+  async updateSeats(flightId, seats, dec = true) {
+    await db.sequelize.query(addRowLockOnFlights(flightId));
+    const flight = await Flight.findByPk(flightId);
+    if (!flight) {
+      throw new Error("Flight not found");
+    }
+
+    if (parseInt(dec)) {
+      await flight.decrement("totalSeats", { by: seats });
+    } else {
+      await flight.increment("totalSeats", { by: seats });
+    }
+
+    await flight.reload();
+    return flight;
+  }
 }

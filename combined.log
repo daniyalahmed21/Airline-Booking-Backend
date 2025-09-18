@@ -241,3 +241,153 @@ notNull Violation: Airplane.capacity cannot be null
     at async FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:16:12)
     at async FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:45:12)
     at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:19
+2025-09-18 12:53:07 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplanes (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:17:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:17:21
+2025-09-18 12:53:12 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplanes (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:17:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:17:21
+2025-09-18 12:53:24 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:29:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:22:20
+2025-09-18 12:53:32 [MyApp] error: Error: Not able to delete the resource
+    at AirplaneService.deleteAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:53:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:35:3
+2025-09-18 12:55:17 [MyApp] error: SequelizeValidationError: notNull Violation: Flight.arrivalTime cannot be null
+    at InstanceValidator._validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async InstanceValidator._validateAndRunHooks (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2426:7)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 12:55:35 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.select (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async Flight.findAll (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1140:21)
+    at async FlightRepository.getAllFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:16:12)
+    at async FlightService.getFilteredFlights (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:45:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:32:19
+2025-09-18 12:55:48 [MyApp] error: TypeError: flightService.updateSeats is not a function
+    at updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:51:45)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+    at param (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:600:14)
+    at param (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:610:14)
+    at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:664:3)
+2025-09-18 12:56:01 [MyApp] error: SequelizeValidationError: notNull Violation: Flight.arrivalTime cannot be null
+    at InstanceValidator._validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async InstanceValidator._validateAndRunHooks (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2426:7)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 12:56:02 [MyApp] error: SequelizeValidationError: notNull Violation: Flight.arrivalTime cannot be null
+    at InstanceValidator._validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async InstanceValidator._validateAndRunHooks (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2426:7)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 12:57:33 [MyApp] error: SequelizeValidationError: notNull Violation: Flight.arrivalTime cannot be null
+    at InstanceValidator._validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async InstanceValidator._validateAndRunHooks (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2426:7)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 12:57:47 [MyApp] error: SequelizeValidationError: notNull Violation: Flight.arrivalTime cannot be null
+    at InstanceValidator._validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async InstanceValidator._validateAndRunHooks (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2426:7)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 12:58:24 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.insert (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2490:35)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 13:00:37 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplanes (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:17:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:17:21
+2025-09-18 13:01:02 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.insert (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2490:35)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 13:01:20 [MyApp] error: Error
+    at Query.run (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.insert (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async Flight.save (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:2490:35)
+    at async Flight.create (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\sequelize\lib\model.js:1362:12)
+    at async FlightRepository.create (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/crudRepository.js:15:12)
+    at async FlightService.createFlight (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:12:12)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:8:18
+2025-09-18 13:40:25 [MyApp] error: TypeError: flightService.updateSeats is not a function
+    at updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:51:45)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:295:15
+    at param (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:600:14)
+    at param (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:610:14)
+    at processParams (C:\Users\Hp\Documents\Basic Nodejs Project\node_modules\router\index.js:664:3)
+2025-09-18 13:42:00 [MyApp] error: Error: Flight not found
+    at FlightRepository.updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FlightService.updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:16:12)
+    at async updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:51:25)
+2025-09-18 13:42:06 [MyApp] error: Error: Flight not found
+    at FlightRepository.updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FlightService.updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:16:12)
+    at async updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:51:25)
+2025-09-18 13:42:09 [MyApp] error: Error: Flight not found
+    at FlightRepository.updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/repositories/flightRepository.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FlightService.updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/flightService.js:16:12)
+    at async updateSeats (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/flightController.js:51:25)
+2025-09-18 13:42:29 [MyApp] error: Error: Not able to find the resource 
+    at AirplaneService.getAirplane (file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/services/airplaneService.js:29:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/Hp/Documents/Basic%20Nodejs%20Project/src/controllers/airplaneController.js:22:20

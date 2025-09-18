@@ -39,21 +39,17 @@ Flight.init(
       onDelete: "CASCADE",
       onUpdate: "CASCADE",
     },
-    arrivalDate: {
+    departureTime: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    departureTime: {
+    arrivalTime: {
       type: DataTypes.DATE,
       allowNull: false,
     },
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    boardingDate: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
     totalSeats: {
       type: DataTypes.INTEGER,
