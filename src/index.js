@@ -11,6 +11,7 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 app.use("/api", apiRouter);
+// app.use("/flightService/api", apiRouter);
 
 app.use(Middlewares.errorHandler);
 
